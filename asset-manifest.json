@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/hit-and-blow/static/css/main.54dc45c7.css",
+    "main.js": "/hit-and-blow/static/js/main.b3f13a13.js",
+    "index.html": "/hit-and-blow/index.html",
+    "main.54dc45c7.css.map": "/hit-and-blow/static/css/main.54dc45c7.css.map",
+    "main.b3f13a13.js.map": "/hit-and-blow/static/js/main.b3f13a13.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.54dc45c7.css",
+    "static/js/main.b3f13a13.js"
+  ]
+}
