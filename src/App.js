@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Gameplay from "./Screens/Gameplay";
+import MenuScreen from "./Screens/MenuScreen";
+import EndGame from "./Screens/EndGame";
+import { motion, AnimatePresence } from "framer-motion";
 
 function App() {
+  const [openGame, setOpenGame] = useState(false);
+  const [openEndGame, setOpenEndGame] = useState(false);
+  const [winner, setWinner] = useState(false);
+  const [gameMode, setGameMode] = useState('off');
+
+  const openGameScreen = (val) => {
+    setOpenGame(val);
+  };
+
+  const openEndGameScreen = (val) => {
+    setOpenEndGame(val);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <main>
+        {!openGame && !openEndGame &&
+          <MenuScreen openGameScreen={openGameScreen} setGameMode={setGameMode} gameMode={gameMode} />
+        }
+        <AnimatePresence>
+          {openGame && !openEndGame &&
+            <motion.div exit={{ opacity: 0 }} transition={{ delay: .2 }}>
+              <Gameplay openGameScreen={openGameScreen} openEndGameScreen={openEndGameScreen} userWon={setWinner} gameMode={gameMode} />
+            </motion.div>
+          }
+        </AnimatePresence>
+        {!openGame && openEndGame &&
+          <EndGame openGameScreen={openGameScreen} openEndGameScreen={openEndGameScreen} userWon={winner} />
+        }
+      </main>
+    </>
   );
 }
 
