@@ -2,9 +2,13 @@ import { useState } from "react";
 import Button from "../Components/Button";
 import DuplicateSelec from "../Components/DuplicateSelec";
 
-export default function MenuScreen({ openGameScreen, setGameMode, gameMode }) {
+export default function MenuScreen({ openGameScreen, setGameMode, gameMode, openInstructionsScreen }) {
     const openScreen = () => {
         openGameScreen(true);
+    };
+
+    const openInsScreen = () => {
+        openInstructionsScreen(true);
     };
 
     return <>
@@ -18,8 +22,9 @@ export default function MenuScreen({ openGameScreen, setGameMode, gameMode }) {
 
         <DuplicateSelec setGameMode={setGameMode} gameMode={gameMode} />
 
-        <div className="flex justify-center mt-10">
+        <div className="flex justify-center mt-10 flex-col items-center gap-2">
             <Button onClick={openScreen} textColor={"text-sheikah-lightBlue"}>Play</Button>
+            <Button onClick={openInsScreen} textColor={"text-sheikah-yellow"}>Instructions</Button>
         </div>
     </>;
 }

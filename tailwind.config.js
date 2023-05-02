@@ -16,6 +16,8 @@ module.exports = {
         "pick-6": "#2357CA",
         "sheikah-lightBlue": "#3CD3FC",
         "sheikah-darkBlue": "#145E94",
+        "menu-blue": "#21BCFF",
+        "sheikah-yellow": "#E1C139",
         "botw-brown": "#FFFDE4",
         "backdrop-brown": "#E2DED3",
         "defeat-red": "#F42300",
@@ -23,7 +25,9 @@ module.exports = {
         "shiny-lightBlue": "#BAEFFB",
       },
       height: {
+        '17': '4.3rem',
         '84': '21rem',
+        '128': '30rem',
       },
       gridTemplateColumns: {
         fluid: "repeat(auto-fit,minmax(6rem,1fr))",

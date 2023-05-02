@@ -366,7 +366,7 @@ export default function Gameplay({ openGameScreen, openEndGameScreen, userWon, g
                             <span>{tryHits[countRes]} Hits! </span>
                             <span>{tryBlows[countRes]} Blows!</span>
                         </motion.div>
-                        <div className="absolute h-screen w-screen select-none"></div>
+                        <div className="absolute h-full w-full select-none"></div>
                     </motion.div>
                 }
             </AnimatePresence>

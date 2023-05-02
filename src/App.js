@@ -3,10 +3,12 @@ import Gameplay from "./Screens/Gameplay";
 import MenuScreen from "./Screens/MenuScreen";
 import EndGame from "./Screens/EndGame";
 import { motion, AnimatePresence } from "framer-motion";
+import Instructions from "./Screens/Instructions";
 
 function App() {
   const [openGame, setOpenGame] = useState(false);
   const [openEndGame, setOpenEndGame] = useState(false);
+  const [openInstructions, setOpenInstructions] = useState(false);
   const [winner, setWinner] = useState(false);
   const [gameMode, setGameMode] = useState('off');
 
@@ -18,11 +20,15 @@ function App() {
     setOpenEndGame(val);
   };
 
+  const openInstructionsScreen = (val) => {
+    setOpenInstructions(val);
+  };
+
   return (
     <>
       <main>
-        {!openGame && !openEndGame &&
-          <MenuScreen openGameScreen={openGameScreen} setGameMode={setGameMode} gameMode={gameMode} />
+        {!openGame && !openEndGame && !openInstructions &&
+          < MenuScreen openGameScreen={openGameScreen} setGameMode={setGameMode} gameMode={gameMode} openInstructionsScreen={openInstructionsScreen} />
         }
         <AnimatePresence>
           {openGame && !openEndGame &&
@@ -33,6 +39,9 @@ function App() {
         </AnimatePresence>
         {!openGame && openEndGame &&
           <EndGame openGameScreen={openGameScreen} openEndGameScreen={openEndGameScreen} userWon={winner} />
+        }
+        {openInstructions && !openGame && !openEndGame &&
+          <Instructions openInstructionsScreen={openInstructionsScreen} />
         }
       </main>
     </>
