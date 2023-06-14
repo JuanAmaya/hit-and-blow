@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/hit-and-blow/static/css/main.4a9c0a17.css",
-    "main.js": "/hit-and-blow/static/js/main.a1810ba5.js",
+    "main.js": "/hit-and-blow/static/js/main.1d084858.js",
     "index.html": "/hit-and-blow/index.html",
     "main.4a9c0a17.css.map": "/hit-and-blow/static/css/main.4a9c0a17.css.map",
-    "main.a1810ba5.js.map": "/hit-and-blow/static/js/main.a1810ba5.js.map"
+    "main.1d084858.js.map": "/hit-and-blow/static/js/main.1d084858.js.map"
   },
   "entrypoints": [
     "static/css/main.4a9c0a17.css",
-    "static/js/main.a1810ba5.js"
+    "static/js/main.1d084858.js"
   ]
 }
