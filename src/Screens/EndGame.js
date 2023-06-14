@@ -26,7 +26,7 @@ export default function EndGame({ openGameScreen, openEndGameScreen, userWon }) 
             transition={{ delay: .3 }}
             className={`${`${userWon ? "bg-botw-brown/20" : "bg-stone-700/20"}`} ${textColor} text-6xl font-semibold text-center p-6 w-screen`}
         >
-            {userWon && "Complete"} {!userWon && "Defeat"}
+            {userWon && "Clear"} {!userWon && "Failed"}
         </motion.h2>
         <motion.div
             initial={{ opacity: 0 }}
